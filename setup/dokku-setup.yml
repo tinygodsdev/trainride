@@ -1,0 +1,37 @@
+- hosts: dokku
+  become: yes
+  vars_files:
+    - secrets.yml
+  tasks:
+    - name: Install dependencies
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - git
+          - wget
+
+    - name: Install Dokku
+      shell: |
+        wget -NP . https://dokku.com/bootstrap.sh
+        sudo DOKKU_TAG=v0.32.3 bash bootstrap.sh
+      args:
+        creates: /usr/bin/dokku
+
+    - name: Check if SSH key already exists
+      shell: dokku ssh-keys:list | grep "admin"
+      register: ssh_key_check
+      ignore_errors: yes
+
+    - name: Add SSH key to Dokku
+      shell: |
+        echo "{{ public_key }}" | dokku ssh-keys:add admin
+      when: ssh_key_check.rc != 0
+
+    - name: Set global domain for Dokku
+      shell: dokku domains:set-global danipolani.art
+
+    - name: Install Dokku Let's Encrypt plugin
+      shell: |
+        dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+        dokku config:set --global DOKKU_LETSENCRYPT_EMAIL={{ email }}

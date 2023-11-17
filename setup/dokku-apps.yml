@@ -1,0 +1,15 @@
+- hosts: dokku
+  become: yes
+  tasks:
+    - name: Check if the Dokku app exists
+      shell: dokku apps:list | grep "trainride"
+      register: app_check
+      ignore_errors: yes
+
+    - name: Create Dokku app if it does not exist
+      shell: dokku apps:create trainride
+      when: app_check.rc != 0
+
+    - name: Set domain for the Dokku app
+      shell: dokku domains:add trainride trainride.danipolani.art
+      when: app_check.rc != 0

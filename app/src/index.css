@@ -1,7 +1,50 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Marck+Script&family=Raleway:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&family=Marck+Script&family=Raleway:wght@400;600;700&display=swap");
 
+@font-face {
+    font-family: 'Nomumu';
+    src: url('/fonts/nomumu251.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
+.background-image {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url("/images/map.png");
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* или другое значение */
+}
+
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-image {
+    background-image: url("/images/map.png");
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:
+        opacity 1s,
+        filter 1s;
+}
+
+.parallax-content {
+    position: relative;
+}
+
+/* При промотке */
+.parallax-container.scrolled .parallax-image {
+    filter: blur(10px) brightness(0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
