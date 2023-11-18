@@ -16,6 +16,7 @@ const MirelyCard = () => {
       <SurveyItem title={"Любимая еда"} value={"Сырный хруст"} />
       <SurveyItem title={"Комфортный напиток"} value={"Липовый чай"} />
       <SurveyItem title={"Хобби"} value={"Ввязываться в неприятности"} />
+      <SurveyItem title={"Хобби"} value={"Ввязываться в неприятности"} />
     </CharacterCard>
   );
 };
