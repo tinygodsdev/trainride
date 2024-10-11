@@ -7,7 +7,7 @@ import PageHeader from '../components/PageHeader';
 import Stations from '../components/Stations';
 import { ApinuDashboard1, ApinuDashboard2 } from '../dashboards.jsx/ApinuDashboards';
 
-export default function Station0010() {
+export default function Apinu({ theme, idx }) {
   return (
     <>
       <PageHeader imageUrl={"/images/map.png"} bgColorClass={"bg-primary"}>
@@ -59,7 +59,7 @@ export default function Station0010() {
         <p className="mb-8 font-raleway text-xl">
           "Медовое веретено" — это не просто пирожное, это настоящая легенда бара "Толстый рыцарь". С первого взгляда оно напоминает пахлаву, но только один укус раскрывает его уникальный характер. Слои тончайшего теста чередуются с медово-ореховой начинкой, а сверху пирожное украшено карамелизованными орехами. Но самое удивительное в этом десерте — его способность гармонировать с соленым пивом, которое подают прямо в баре. Контраст между сладостью меда и солёностью пива создаёт невероятно насыщенный вкусовой букет. А взбитые сливки, подаваемые на боку, добавляют завершающий акцент, делая каждый укус "Медового веретено" поистине незабываемым. Это пирожное — идеальный выбор для тех, кто ищет нечто большее, чем просто десерт; это целый вкусовой эксперимент, который никого не оставит равнодушным.
         </p>
-        <Stations current={2} />
+        <Stations current={idx} />
       </div>
     </>
   )

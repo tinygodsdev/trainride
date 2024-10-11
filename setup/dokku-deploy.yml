@@ -7,17 +7,14 @@
     - name: Delete image
       shell: docker rmi delael/trainride:latest
 
-    # - name: Get image digest 
-    #   shell: "{{ 'docker inspect --format=\"{{index .RepoDigests 0}}\" ' + docker_image + ':' + docker_image_tag }}"
-    #   register: docker_digest
-
     - name: Deploy to dokku
       shell: |
         dokku git:from-image trainride delael/trainride:latest
-        dokku ps:rebuild trainride:latest
+      register: dokku_output
+      failed_when: >
+        ('Image exists on host, skipping pull' not in dokku_output.stderr) and
+        ('No changes detected, skipping git commit' not in dokku_output.stderr) and
+        dokku_output.rc != 0
 
-
-# dokku registry:login docker.io delael year2084
-# dokku registry:set trainride server docker.io
-# docker inspect --format='{{index .RepoDigests 0}}' delael/trainride:latest
-# dokku git:from-image trainride delael/trainride@sha256:5f91b771fbf7ca40342df0210bb2c01b54453ad0af0d207508f2e0012a405746
+    - name: Rebuild in dokku
+      shell: dokku ps:rebuild trainride

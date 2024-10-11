@@ -16,7 +16,7 @@ import { ArieCard, MirelyCard } from "../components/Cards";
 import { BsQuestionCircle } from "react-icons/bs";
 import TranslationTooltip from "../components/TranslationTooltip";
 
-function Home({ theme }) {
+function Home({ theme, idx }) {
   return (
     <>
       <PageHeader imageUrl={"/images/map.png"} bgColorClass={"bg-primary"}>
@@ -28,7 +28,7 @@ function Home({ theme }) {
       <div className="container mx-auto px-4 max-w-screen-md py-24">
 
         <div className="mb-8">
-          <h2 className="text-2xl font-bold font-gabriela">Приморский вокзал, Вельвет <TranslationTooltip data={{ text: "velvet", transcription: "" }} /></h2>
+          <h2 className="text-2xl font-bold font-gabriela">Приморский вокзал, Вельвет <TranslationTooltip data={{ text: "veljvet", transcription: "" }} /></h2>
           <p className="font-raleway text-lg"><PopoverCard triggerText={"Сезон Зелени"} data={data.info.calendarGreen} theme={"dark"} />, четвертая декада, ранний вечер</p>
           <p className="font-raleway text-lg flex items-center">
             <span className="font-bold">07.4.3.119&nbsp;</span>
@@ -67,71 +67,16 @@ function Home({ theme }) {
 
         <ArieCard />
 
-        <p className="mb-8 font-raleway text-xl">
-          Однажды маленькая булочка с кунжутом на верху решила, что ей пора узнать мир. Скользнув с прилавка пекарни, она отправилась в путешествие по городу. Преодолевая препятствия в виде голодных птиц и огромных луж, булочка даже нашла временный дом в корзинке уличного музыканта, где она стала частью импровизированного барабанного сета. Но самое удивительное произошло, когда булочка оказалась в парке: там её заметил ребёнок и положил в кормушку для уток. В итоге, наша героиня стала частью большого праздника для пернатых друзей, поняв, что иногда самые невероятные приключения приводят к самым тёплым и трогательным моментам.
-        </p>
-
-        <Button className="mr-2" color="primary">
-          primary
-        </Button>
-        <Button className="mr-2" color="default">
-          default
-        </Button>
-        <Button className="mr-2" color="secondary">
-          secondary
-        </Button>
-        <Button className="mr-2" color="success">
-          success
-        </Button>
-        <Button className="mr-2" color="warning">
-          warning
-        </Button>
-        <Button className="mr-2" color="danger">
-          danger
-        </Button>
-
-        <ChatWrapper imageUrl={"/images/house.png"} bgColorClass={"bg-primary"}>
-          <ChatMessage name="Thunderpaw" avatar={data.people.thunderpaw.ava} message="Hi Monlie! Seen my red dot lately?" colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Monlie" avatar={data.people.monlie.ava} message="Not now, Thunderpaw. I'm busy looking for my left sock." colorClass={"success"} position={"right"} />
-          <ChatMessage name="Monlie" avatar={""} message="How about you help me first, then we talk treats?" colorClass={"success"} position={"right"} />
-          <ChatMessage name="Thunderpaw" avatar={data.people.thunderpaw.ava} message="If you give me treats, I might just help you find it." colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Thunderpaw" avatar={""} message="..." colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Thunderpaw" avatar={""} message="Gimmie food, Monlie! I can't search on an empty stomach!" colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Monlie" avatar={data.people.monlie.ava} message="You just had breakfast, Thunderpaw. Are you a black hole in disguise?" colorClass={"success"} position={"right"} />
-          <ChatMessage name="Thunderpaw" avatar={data.people.thunderpaw.ava} message="I'm a growing boy! I need my second breakfast, elevenses, luncheon..." colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Monlie" avatar={data.people.monlie.ava} message="You've been hanging out with the Hobbits again, haven't you?" colorClass={"success"} position={"right"} />
-          <ChatMessage name="Thunderpaw" avatar={data.people.thunderpaw.ava} message="Maybe... But seriously, where's the food?" colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Monlie" avatar={data.people.monlie.ava} message="Fine, I'll get the treats. But you're helping me with laundry after." colorClass={"success"} position={"right"} />
-          <ChatMessage name="Thunderpaw" avatar={data.people.thunderpaw.ava} message="Deal! But I get to nap in the laundry basket after." colorClass={"danger"} position={"left"} />
-          <ChatMessage name="Monlie" avatar={data.people.monlie.ava} message="Only if you promise not to shed on my clean clothes again." colorClass={"success"} position={"right"} />
+        <ChatWrapper imageUrl={"/images/house.png"} bgColorClass={"bg-warning"}>
+          <ChatMessage name="Ари" avatar={data.people.arie.ava} message="Эй, Мирели, а давай поиграем в шахматы?" colorClass={"primary"} position={"left"} />
+          <ChatMessage name="Мирели" avatar={data.people.mirely.ava} message="Я бы с удовольствием, но разве у тебя есть шахматы?" colorClass={"secondary"} position={"right"} />
+          <ChatMessage name="Ари" avatar={data.people.arie.ava} message="Нет, конечно. Я просто подумал, что мы могли бы использовать пешки вместо настоящих фигур!" colorClass={"primary"} position={"left"} />
+          <ChatMessage name="Мирели" avatar={data.people.mirely.ava} message="И чем же, позволь спросить, мы будем их двигать по доске?" colorClass={"secondary"} position={"right"} />
+          <ChatMessage name="Ари" avatar={data.people.arie.ava} message="О, я могу их переставлять лапкой! А ты просто говори, куда ходить" colorClass={"primary"} position={"left"} />
+          <ChatMessage name="Мирели" avatar={data.people.mirely.ava} message="Хм... Забавная идея! Давай попробуем, только без жульничества, ладно?" colorClass={"secondary"} position={"right"} />
+          <ChatMessage name="Ари" avatar={data.people.arie.ava} message="Разумеется! Я же порядочный волшебный зверь" colorClass={"primary"} position={"left"} />
         </ChatWrapper>
 
-        <p className="font-raleway text-xl mb-8">
-          Сырный хруст — это не просто закуска, это целое кулинарное произведение искусства. Изготовленный из тонких листов теста, щедро посыпанных сыром и запечённых до золотистой корочки, он становится звездой любого стола. При первом же укусе хрустящая текстура и насыщенный сырный вкус сливаются воедино, создавая неповторимый вкусовой опыт. Но сырный хруст не терпит поспешности: чтобы по-настоящему оценить его, нужно медленно наслаждаться каждым кусочком, позволяя ароматам и текстурам раскрыться в полной мере. Эта закуска становится идеальным дополнением к вину или коктейлю, а также отличным поводом собрать друзей и провести время в хорошей компании.
-        </p>
-
-
-
-
-        <p className="font-raleway text-xl mb-8">
-          Сырный хруст — это не просто закуска, это целое кулинарное произведение искусства. Изготовленный из тонких листов теста, щедро посыпанных сыром и запечённых до золотистой корочки, он становится звездой любого стола. При первом же укусе хрустящая текстура и насыщенный сырный вкус сливаются воедино, создавая неповторимый вкусовой опыт. Но сырный хруст не терпит поспешности: чтобы по-настоящему оценить его, нужно медленно наслаждаться каждым кусочком, позволяя ароматам и текстурам раскрыться в полной мере. Эта закуска становится идеальным дополнением к вину или коктейлю, а также отличным поводом собрать друзей и провести время в хорошей компании.
-        </p>
-
-        <div className="float-right w-80 my-2 ml-4">
-          <Image src={"/images/house.png"} />
-        </div>
-
-        <p className="font-raleway text-xl hyphens-auto mb-8 text-justify">
-          Сырный хруст — это не просто закуска, это целое кулинарное произведение искусства. Изготовленный из тонких листов теста, щедро посыпанных сыром и запечённых до золотистой корочки, он становится звездой любого стола. При первом же укусе хрустящая текстура и насыщенный сырный вкус сливаются воедино, создавая неповторимый вкусовой опыт. Но сырный хруст не терпит поспешности: чтобы по-настоящему оценить его, нужно медленно наслаждаться каждым кусочком, позволяя ароматам и текстурам раскрыться в полной мере. Эта закуска становится идеальным дополнением к вину или коктейлю, а также отличным поводом собрать друзей и провести время в хорошей компании.
-        </p>
-
-        <div className="float-left w-80 my-2 mr-4">
-          <Image src={"/images/house.png"} />
-        </div>
-
-        <p className="font-raleway text-xl mb-8">
-          "Медовое веретено" — это не просто пирожное, это настоящая легенда бара <PopoverCard triggerText={"Толстый рыцарь"} data={data.places.fatKnight} theme={"dark"} />. С первого взгляда оно напоминает пахлаву, но только один укус раскрывает его уникальный характер. Слои тончайшего теста чередуются с медово-ореховой начинкой, а сверху пирожное украшено карамелизованными орехами. Но самое удивительное в этом десерте — его способность гармонировать с соленым пивом, которое подают прямо в баре. Контраст между сладостью меда и солёностью пива создаёт невероятно насыщенный вкусовой букет. А взбитые сливки, подаваемые на боку, добавляют завершающий акцент, делая каждый укус "Медового веретено" поистине незабываемым. Это пирожное — идеальный выбор для тех, кто ищет нечто большее, чем просто десерт; это целый вкусовой эксперимент, который никого не оставит равнодушным.
-        </p>
         <Stations current={0} />
       </div>
     </>

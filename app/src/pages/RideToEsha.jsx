@@ -2,11 +2,10 @@ import React from 'react'
 import CharacterCard from '../components/CharacterCard';
 import SurveyItem from "../components/SurveyItem";
 import { Button, Card, CardBody, Divider, Link } from "@nextui-org/react";
-import { Link as RouterLink } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import Stations from '../components/Stations';
 
-export default function Ride0010() {
+export default function RideToEsha({ theme, idx }) {
   return (
     <>
       <PageHeader imageUrl={"/images/map.png"} bgColorClass={"bg-primary"}>
@@ -50,7 +49,7 @@ export default function Ride0010() {
         </p>
 
 
-        <Stations current={1} />
+        <Stations current={idx} />
       </div>
     </>
   )

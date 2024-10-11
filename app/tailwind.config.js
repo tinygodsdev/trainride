@@ -56,16 +56,20 @@ export default {
         "kepeken": {
           extend: "dark", // <- inherit default values from dark theme
           colors: {
-            default: "#DF5113",
-            background: "#050833",
-            foreground: "#ffffff",
+            default: "#2fadfb",
+            background: "#0a2043",
+            foreground: "#fffdfc",
             primary: {
-              DEFAULT: "#2E3599",
-              foreground: "#ffffff",
+              DEFAULT: "#70af3c",
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#f77792", 
+              foreground: "#fffdfc",
             },
             content1: {
-              DEFAULT: "#141A66",
-              foreground: "#ffffff",
+              DEFAULT: "#1c3d73",
+              foreground: "#fffdfc",
             },
           },
         },
@@ -124,7 +128,162 @@ export default {
             },
           },
         },        
-        // ... custom themes
+        "esha": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "kalarna": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "mash": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "risz": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "risz-channel": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "tilanka": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "valley-of-creeks": {
+          extend: "dark",
+          colors: {
+            default: "#b94c49", 
+            background: "#182B34", 
+            foreground: '#fffdfc',
+            primary: {
+              DEFAULT: "#3ab0d6", 
+              foreground: "#fffdfc",
+            },
+            secondary: {
+              DEFAULT: "#35BE77", 
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT:  "#044558",
+              foreground: "#fffdfc",
+            },
+          },
+        },
+        "velvet-again": {
+          extend: "light", // <- inherit default values from dark theme
+          colors: {
+            default: "#ddae2b",
+            background: "#081530",
+            foreground: "#fffdfc",
+            primary: {
+              DEFAULT: "#2460ec",
+              foreground: "#fffdfc",
+            },
+            content1: {
+              DEFAULT: "#1e2b67",
+              foreground: "#fffdfc",
+            },
+          },
+        },
       },
     }),
   ]
